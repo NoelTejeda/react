@@ -1,0 +1,2 @@
+React: es una biblioteca de JS. 
+
