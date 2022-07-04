@@ -1,1 +1,231 @@
 React: es una biblioteca de JS. 
+
+componente: parte de la interfaz de usuario que es independiente (porque cada componente vá a tener cierto estado y una funcionalidad especifica e independiente de otros componentes) y reusable ( se define una vez y se puede usar)
+
+**** tipos de componentes **** 
+Existen muchas pero la más usadas son:
+
++ de clase
++ funcionales
+
+componente funcional:
+función de javascript E/S6 que retorna un elemento de React (JSX)
+
+ejemplo:
+function Saludo(props){
+    return <h1> !Hola, {props.nombre}!</h1>
+}
+
+----------------------------------------------------
+----------------------------------------------------
+definicion de JSX:
+
+https://cinthialandia.com/es/blog/jsx/
+
+Es una sintaxis que se utiliza como extensión de javascript la cual es utilizada dentro de componentes react para describir cómo se debería de ver la UI.
+
+Es importante al utilizar JSX es importar react en cada archivo que utilice JSX, ya que cuando el código es compilado, este es transformado a elementos con extensión
+
+
+----------------------------------------------------
+----------------------------------------------------
+Características de los componentes funcionales:
+
+1) debe retornar un elemento de React (jsx)
+una mezcla de html.
+
+2) debe comenzar con una letra en mayúscula:
+function Saludo
+
+3) puede recibir valores si es necesario
+en react se llaman props (propiedades)
+
+----------------------------------------------------
+----------------------------------------------------
+
+Props:
+son argumentos que puede recibir un componente de React; funciona similar a los argumentos que se pasan a una función cuando se llaman en js
+
+sólo pueden ser enviados de un "padre a hijo"
+
+----------------------------------------------------
+----------------------------------------------------
+
+componente de Clase:
+
+clase de ES6 (js moderno) que retorna un elemento JSX
+
+ejemplo: el mismo componente anterior pero con clase.
+
+class Saludo extends React.Component {
+    render() {
+        return <h1> Hola!, {this.props.nombre}! </h1>
+    }
+}
+
+* hay que extender React.Component que dá la funcionalidad 
+* render() es el método que se define para renderizar(mostrar)
+* y entre llaves se retorna el elemento jsx
+
+----------------------------------------------------
+----------------------------------------------------
+Características de los componentes de Clase:
+
+1) debe extender React.Component 
+2) debe tener un método render() para retornar elementos jsx
+3) puede recibir valores si es necesario.
+
+----------------------------------------------------
+----------------------------------------------------
+
+Estado:
+Representación en javascript del conjunto de propiedades de un componente y sus valores actuales.
+
+----------------------------------------------------
+----------------------------------------------------
+HOOKS:
+
+ANTERIORMENTE, se usaban componentes de clase para poder trabajar con "estados" de los componentes y "NO" se podian hacer con componentes funcionales(anteriores a version 16.8).
+
+Luego llegaron los Hooks
+que nos permiten agregarles estados a los componentes funcionales.
+
+GRACIAS a los HOOKS podemos asignar y actualizar el estado de un componente funcional en React.
+
+
+----------------------------------------------------
+----------------------------------------------------
+
+Event Listener:
+
+función en js que es ejecutada cuando ocurre un evento especifico, también se le puede llamar "Event Handler"
+
+
+----------------------------------------------------
+----------------------------------------------------
+NodeJs:
+
+Node.js, es un entorno en tiempo de ejecución multiplataforma para la capa del servidor (en el lado del servidor) basado en JavaScript.
+
+es un entorno controlado por eventos diseñado para crear aplicaciones escalables, permitiéndote establecer y gestionar múltiples conexiones al mismo tiempo. Gracias a esta característica, no tienes que preocuparte con el bloqueo de procesos, pues no hay bloqueos.
+
+Características principales de Node.js:
+
+Resumiendo, Node.js se ha hecho popular en los últimos años gracias a las siguientes características:
+
+    Velocidad. Node.js está construido sobre el motor de JavaScript V8 de Google Chrome, por eso su biblioteca es muy rápida en la ejecución de código.
+    Sin búfer. Las aplicaciones de Node.js generan los datos en trozos (chunks), nunca los almacenan en búfer.
+    Asíncrono y controlado por eventos.  Como hemos dicho anteriormente, las APIs de la biblioteca de Node.js son asíncronas, sin bloqueo. Un servidor basado en Node.js no espera que una API devuelva datos. El servidor pasa a la siguiente API después de llamarla, y un mecanismo de notificación de eventos ayuda al servidor a obtener una respuesta de la llamada a la API anterior.
+    Un subproceso escalable. Node.js utiliza un modelo de un solo subproceso con bucle de eventos. Gracias al mecanismo de eventos, el servidor responde sin bloqueos, como hemos dicho. Esto hace que el servidor sea altamente escalable comparando con los servidores tradicionales como el Servidor HTTP de Apache.
+
+----------------------------------------------------
+----------------------------------------------------
+
+Que es un elemento:
+definen lo que se ve en la pantalla, que pueden ser div, h1, img, 
+
+Un componente está hecho de elementos
+
+los componentes se escriben con la primera letra en mayúscula. (Boton)
+
+<div class="fila">
+    <Boton manejarClic={agregarInput}>1</Boton>
+
+
+
+ *****Asignar atributos a los elementos en JSX:   ******
+ algunos se escriben de forma distinta si lo comparamos con HTML
+
+
+class en HTML:
+<h1 class="titulo-azul"> </h1>
+class en JSX:
+<h1 className="titulo-azul"> </h1>
+-----
+
+for en HTML:
+<label for="css">CSS</label>
+class en JSX:
+<label htmlFor="css">CSS</label>
+
+
+ *****Asignar stilos a los elementos en JSX:   ******
+
+ en css:
+ background-image
+ en JSX:
+ backgroundImage
+
+ en css:
+ background-color
+ en JSX:
+ backgroundColor
+
+ en css:
+ font-family
+ en JSX:
+ fontFamily
+
+ NORMALMENTE SE SUELE GUARDAR LOS ESTILOS EN UN ARCHIVO CSS, pero estas opciones son si se quiere hacer de manera más dinámica.
+
+ también se pueden guardar en forma de objetos con una constante, teniendo en cuanta la forma de escritura en camelcase (estiloDiv) los estilos ejemplo:
+
+ const estiloDiv={
+    color:'yellow',
+    backgroundColor:'black'
+ }
+
+ y para llamarlo:
+
+<div style={estiloDiv}> Hola!, Mundo </div> 
+
+se coloca entre llaves, porque esto nos permite indicar que lo que está dentro es código js
+
+OTRA ALTERNATIVA ES:    
+
+<div style={{color:'yellow'}}> Hola Mundo!! </div>
+
+cuando tenemos pocas propiedades se puede implementar, hay que tomar en cuenta las dos llaves.
+
+las llaves externas indican código js
+las llaves internas son la creación del objeto js
+
+----------------------------------------------
+----------------------------------------------
+
+
+******  ESTRUCTURA DE UN COMPONENTE *********
+
+1.- Después de establecer al estructura es necesario saber como renderizar componentes, cómo mostrarlos en la aplicación web.
+
+<div id="root"></div>
+
+const elemento = <h1> Hola! </h1>;
+
+ReactDom.render(                        //dos elementos
+    elemento,
+    document.getElementById('root')
+)
+
+// es necesario la importación para el uso del método render.
+import ReactDOM from 'react-dom';
+
+----------------------------------------------
+----------------------------------------------
+
+para hacer uso de variables de javascript se deben poner entre llaves, ejemplo:
+
+let nombre="gino";
+
+<p>Su nombre es: {nombre.toUpperCase()} </p>
+//esta es la manera de llamar metodos como el toUpperCase()
+
+----------------------------------------------
+----------------------------------------------
+
+PASOS PARA CREAR UN PROYECTO:
+
+1.- desde la carpeta y en la terminal:
+npx create-react-app nombreArchivo ó
+si estoy dentro de la carpeta ya creada solo le agrego un punto (.) ejemplo:
+npx create-react-app . 
