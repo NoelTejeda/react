@@ -202,7 +202,7 @@ las llaves internas son la creación del objeto js
 
 const elemento = <h1> Hola! </h1>;
 
-ReactDom.render(                        //dos elementos
+ReactDom.render(                        //dos elementos (Hola!)
     elemento,
     document.getElementById('root')
 )
@@ -229,3 +229,58 @@ PASOS PARA CREAR UN PROYECTO:
 npx create-react-app nombreArchivo ó
 si estoy dentro de la carpeta ya creada solo le agrego un punto (.) ejemplo:
 npx create-react-app . 
+
+
+2.-
+ /* borramos los archivos que no se están usando:
+- setupTest
+- reportWebVital
+- app.test.js
+- logo.svg
+de index.js:
+  import reportWebVitals from './reportWebVitals';
+  reportWebVitals(); */
+
+
+
+3.- una vez realizado el primer componente e irlo visualizando en el buscador, es necesario que se renderize ese componente. y eso lo logramos en el archivo app.js dentro del <div className="App"> <Testimonio> </div>
+
+No solo basta con colocarlo dentro del div en app.js, hay que importarlo, porque de lo contrario indicará que no está definido, y app.js no sabrá que existe:
+        import Testimonio from './componentes/Testimonio.js;  
+
+pero si lo importamos es necesario exportalo en el archivo origen (Testimonio.js) para que otro lo reciba (importar) y colocar la siguiente linea al final.:
+export default Testimonio;
+
+----------------------------------------------
+----------------------------------------------
+
+*** Diferencia entre las exportaciones nombradas y por defecto ****
+
+las que son por "defecto" son las que se exportan del componente (ejemplo Testimonio.jsx) al final (export default Testimonio;) e importan en  el archivo principal (Apps.js) de la siguiente manera: 
+
+function App() {
+  return (
+    <div className="App">
+      <Testimonio />
+    </div>
+  );
+}
+
+y las *** exportaciones "Nombradas" *** :
+
+No se escribe la exportación al final del componente como en las por defecto. sino que se hacen así:
+
+* se coloca la palabra export en la funcion (componente Testimonio.jsx a exportar):
+    export function Testimonio() {
+
+* y en Apps.js se importaria de la siguiente manera: 
+import {Testimonio} from './componentes/Testimonio'
+entre llaves.
+
+con la exportación nombrada podemos tener varios elementos exportados; así que hay que ser explicitos colocando entre llaves, para decirle a react cuál queremos importar.
+
+PERO si lo hacemos por defecto sólo podemos exportar 1 de ese archivo.
+
+----------------------------------------------
+----------------------------------------------
+
