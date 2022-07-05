@@ -1,19 +1,20 @@
 // importamos react del paquete react
 import React from "react";
+import '../style/Testimonio.css';
 
 //componente funcional
-export function Testimonio() {
+export function Testimonio(props) {
   return (
     <div className="contenedor-testimonio">
       <img
         className="imagen-testimonio"
-        src={require("../imagenes/Emma Bostian.png")}
+        // src={require(`../imagenes/Emma Bostian.png`)}
+        src={require(`../imagenes/${props.imagen}.png`)}
         alt="Emma Bostian" />
       <div className="contenedor-texto-testimonio">
-        <p className="nombre-testimonio">Emma Bostian en Suecia</p>
-        <p className="cargo-testimonio">Ingeniera de Software en Spotify</p>
-        <p className="texto-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eos officiis explicabo error illo dolore. Animi sint, deserunt doloribus quidem maiores cum libero cumque magni necessitatibus ea repudiandae quis aut! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, quo mollitia sint molestiae molestias nihil explicabo deleniti dolorum eveniet quas.</p>
-
+        <p className="nombre-testimonio"> <strong>{props.nombre}</strong> en {props.pais} </p>
+        <p className="cargo-testimonio">{props.cargo} en {props.empresa} </p>
+        <p className="texto-testimonio">"{props.testimonio} "</p>
       </div>
     </div>
   );

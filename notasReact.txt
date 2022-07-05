@@ -284,3 +284,47 @@ PERO si lo hacemos por defecto sólo podemos exportar 1 de ese archivo.
 ----------------------------------------------
 ----------------------------------------------
 
+***** EL USO DE LOS PROPS *****
+2:21:49 - Aprende React Desde Cero freecodecamp
+
+la idea de los props es la reutilización; y estos se deben declarar en la función ejemplo:
+
+function Testimonio(props) {
+
+}
+
+para poder usar el props en la estructura del componente, para así personalizar, como si fueran los parámetros y argumentos.
+
+ahora dentro de la estructura vemos cuales son los que se van a repetir y lo reemplazamos con {props.algo} en todos las partes reemplazables.
+
+---- Pasar props a un componente ------
+
+en el componente que renderiza ó que lo crea es app; ahora se colocan los nombres que he puesto en el componente Testimonio (nombre,cargo,pais,etc.) para pasarle los argumentos. ver código.
+
+
+---- Personalizar la imagen ------
+
+para poder hacer uso de las imágenes de manera dinámica se deben hacer uso de las plantillas literales (`alt + 96 `)
+
+ src={require(`../imagenes/${props.imagen}.png`)}
+
+recordando que se debe hacer uso del simbolo $ y llaves en las platillas literales, 
+
+
+UNA VEZ CREADA LA PLANTILLA Y USADO LOS PROPS CORRECTAMENTE, PODEMOS HACER USO DE ELLA, SOLO LLENANDO LOS DATOS. EJEMPLO:
+----------------------------------------------
+----------------------------------------------
+
+
+"SE RECOMIENDA" que en las etiquetas que no tienen cierre (self closing tag), se les deje un espacio al final ejemplo:
+
+<img 
+        className="imagen-testimonio"
+        // src={require(`../imagenes/Emma Bostian.png`)}
+        src={require(`../imagenes/${props.imagen}.png`)}
+        alt="Emma Bostian" (el espacio aqui)/>
+
+
+--------------------
+
+npx create-react-app NO es la única forma de crear un proyecto de React, pero es la más recomendada porque es más intuitiva y crea la estructura inicial, e instala los módulos que se van a necesitar.
