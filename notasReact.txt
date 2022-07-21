@@ -328,3 +328,27 @@ UNA VEZ CREADA LA PLANTILLA Y USADO LOS PROPS CORRECTAMENTE, PODEMOS HACER USO D
 --------------------
 
 npx create-react-app NO es la única forma de crear un proyecto de React, pero es la más recomendada porque es más intuitiva y crea la estructura inicial, e instala los módulos que se van a necesitar.
+
+
+
+
+-----------------------------------------------------
+/*
+uso de 
+<React.Fragment> .... </React.Fragment>
+otra manera de usarlo es:
+<>...</>    
+ 
+esto lo que hace es retornar o envolver multiples elementos, sin necesidad de crear uno nuevo dentro del Dom.
+
+ejemplo: si uso un div. y luego debajo uso otro elemento <p></p>
+esto me representaria un error al compilar: SyntaxError
+y hay dos maneras de solucionarlo:
+
+1.- envolviendo todos los elementos dentro de un div.
+  esta solución no es recomendable ya que generariamos un div extra cada vez que queramos retornar algún elemento.
+
+2.- envolviendo todos los elementos dentro de un fragment.
+  esta es la opción que sugiere react. ya que no afectaria en la estructura jerarquica del Dom.
+
+*/ 

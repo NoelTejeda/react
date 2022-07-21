@@ -27,3 +27,25 @@ export function Testimonio(props) {
 
 /* para incluir una IMAGEN no basta con src y la ruta, en react, es necesario colocarlo entre llaves y agregar REQUIRE ó también se puede realizar mediante una importación (import)*/
 
+
+
+/*
+uso de 
+<React.Fragment> .... </React.Fragment>
+otra manera de usarlo es:
+<>...</>    
+ 
+esto lo que hace es retornar o envolver multiples elementos, sin necesidad de crear uno nuevo dentro del Dom.
+
+ejemplo: si uso un div. y luego debajo uso otro elemento <p></p>
+esto me representaria un error al compilar: SyntaxError
+y hay dos maneras de solucionarlo:
+
+1.- envolviendo todos los elementos dentro de un div.
+  esta solución no es recomendable ya que generariamos un div extra cada vez que queramos retornar algún elemento.
+
+2.- envolviendo todos los elementos dentro de un fragment.
+  esta es la opción que sugiere react. ya que no afectaria en la estructura jerarquica del Dom.
+
+*/ 
+
