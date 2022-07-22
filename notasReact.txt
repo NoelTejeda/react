@@ -18,6 +18,10 @@ function Saludo(props){
 
 ----------------------------------------------------
 ----------------------------------------------------
+se recomienda guardar todos los componentes en una carpeta, llamada componentes y dentro de ella guardar cada componente con su primera letra en mayúscula. HolaMundo.jsx
+
+----------------------------------------------------
+----------------------------------------------------
 definicion de JSX:
 
 https://cinthialandia.com/es/blog/jsx/
@@ -36,6 +40,11 @@ una mezcla de html.
 
 2) debe comenzar con una letra en mayúscula:
 function Saludo
+y se recomienda que la función deba tener el mismo nombre qeu el del archivo. ejemplo:
+
+archivo: Testimonio.jsx
+funcion: export function Testimonio(props)
+
 
 3) puede recibir valores si es necesario
 en react se llaman props (propiedades)
@@ -43,13 +52,12 @@ en react se llaman props (propiedades)
 ----------------------------------------------------
 ----------------------------------------------------
 
-Props:
-son argumentos que puede recibir un componente de React; funciona similar a los argumentos que se pasan a una función cuando se llaman en js
+dentro de la función es obligatorio el return y dentro par de parentesis ( codigo html) ya que es el que nos va a retornar toda la función del componente.
 
-sólo pueden ser enviados de un "padre a hijo"
 
 ----------------------------------------------------
 ----------------------------------------------------
+
 
 componente de Clase:
 
@@ -251,6 +259,9 @@ No solo basta con colocarlo dentro del div en app.js, hay que importarlo, porque
 pero si lo importamos es necesario exportalo en el archivo origen (Testimonio.js) para que otro lo reciba (importar) y colocar la siguiente linea al final.:
 export default Testimonio;
 
+si tenemos varios componentes dentro de un archivo, hay que tomar en cuenta que al exportar sólo acepta un default. ejmp:
+export default func....
+
 ----------------------------------------------
 ----------------------------------------------
 
@@ -283,6 +294,12 @@ PERO si lo hacemos por defecto sólo podemos exportar 1 de ese archivo.
 
 ----------------------------------------------
 ----------------------------------------------
+
+Props:
+son argumentos que puede recibir un componente de React; funciona similar a los argumentos que se pasan a una función cuando se llaman en js
+
+sólo pueden ser enviados de un "padre a hijo"
+
 
 ***** EL USO DE LOS PROPS *****
 2:21:49 - Aprende React Desde Cero freecodecamp
@@ -352,3 +369,12 @@ y hay dos maneras de solucionarlo:
   esta es la opción que sugiere react. ya que no afectaria en la estructura jerarquica del Dom.
 
 */ 
+
+----------------------------------------------------------------
+------------------ Atajos React --------------------------------
+
+En las extensiones estan todos los atajos.
+
+
+rfc = react function component
+      Crea una función básica de un componente en react
