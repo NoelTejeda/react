@@ -157,7 +157,8 @@ class en JSX:
 <label htmlFor="css">CSS</label>
 
 
- *****Asignar stilos a los elementos en JSX:   ******
+ *****Asignar stilos (USO DE CSS) a los elementos en JSX:   ******
+ 
 
  en css:
  background-image
@@ -319,7 +320,45 @@ ahora dentro de la estructura vemos cuales son los que se van a repetir y lo ree
 en el componente que renderiza ó que lo crea es app; ahora se colocan los nombres que he puesto en el componente Testimonio (nombre,cargo,pais,etc.) para pasarle los argumentos. ver código.
 
 
----- Personalizar la imagen ------
+
+
+--OTRA MANERA DE NO USAR PROPS ES USAR DESESTRUCTURING:--
+
+EJEMPLO DE PROPS:
+
+function Boton (props) {
+  return(
+    <button>
+    {props.texto}
+    </button>
+  )
+}
+
+
+EJEMPLO USANDO DESESTRUCTURING.
+
+function Boton ({texto}) {
+  return(
+    <button>
+    {texto}
+    </button>
+  )
+}
+
+
+en vez de colocar props se coloca dentro de las llaves las 
+propiedades que estamos pasando.
+
+
+
+***** Maneras de agregar imagénes *******
+
+1) require
+2) import
+
+CON REQUIRE:
+
+---- Personalizar (agregar) la imagen ------
 
 para poder hacer uso de las imágenes de manera dinámica se deben hacer uso de las plantillas literales (`alt + 96 `)
 
@@ -328,7 +367,19 @@ para poder hacer uso de las imágenes de manera dinámica se deben hacer uso de 
 recordando que se debe hacer uso del simbolo $ y llaves en las platillas literales, 
 
 
-UNA VEZ CREADA LA PLANTILLA Y USADO LOS PROPS CORRECTAMENTE, PODEMOS HACER USO DE ELLA, SOLO LLENANDO LOS DATOS. EJEMPLO:
+
+
+CON IMPORT:
+
+1.- tener la imagen en la carpeta dentro del proyecto.
+2.- import nombrequequeramos from './img/logo.png';
+3.- y para usarla: solo se coloca el nombre en el src. ejemplo:
+    <img
+      className='imagenes'
+      src={nombrequequeramos}
+      alt='logo'
+    />
+
 ----------------------------------------------
 ----------------------------------------------
 
